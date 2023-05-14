@@ -15,6 +15,9 @@ Results are in corresponding df_\*.csv files
 Mini_DDSM.ipynb contains data analysis, plots, and calculations
 
 Failed Ideas:
-- Contrast, brightness, and ROI cropping in Mini_DDSM.ipynb and mini_ddsm_brightness.py
+- Contrast, brightness, and ROI cropping in Mini_DDSM.ipynb 
+- Running a model such that we group images by patient is in mini_ddsm_vgg_bypatient.py
+- Running a model augmented with brighter images is in mini_ddsm_vgg_bright.py
+- Running a model augmented with contrast added to images is in mini_ddsm_vgg_contrast.py
 - Other fairness metrics such as demographic parity, equalized odds, disparate impact, etc in Mini_DDSM.ipynb
 - Simple attempt at using a DCGAN to generate new images as a form of data augmentation in dcgan.py

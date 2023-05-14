@@ -10,7 +10,7 @@ from tensorflow.keras.optimizers import Adam, RMSprop
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from tensorflow.keras.applications.vgg16 import VGG16
 from tensorflow.keras.layers import Dense, Flatten, Dropout,  Conv2D, MaxPooling2D
-from tensorflow.keras.utils import to_categoricalpip
+from tensorflow.keras.utils import to_categorical
 
 """# Data Importing"""
 
@@ -21,6 +21,7 @@ from tensorflow.keras.utils import to_categoricalpip
 
 # plt.rcParams.update({'font.size': 10})
 # plt.rcParams['figure.figsize'] = (8, 6)
+
 # print('Cores:', cores)
 # print('Device:', device)
 # print('Day: ', datetime.now())

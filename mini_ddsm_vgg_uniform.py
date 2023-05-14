@@ -13,16 +13,14 @@ from tensorflow.keras.layers import Dense, Flatten, Dropout,  Conv2D, MaxPooling
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import matplotlib.pyplot as plt
-import os
 
 
 """# Data Importing"""
 # If model already trained, set this to True
-model_saved = True
+model_saved = False
 # For JPEG
 # name_dataset = "/content/drive/Shareddrives/COS429 Final Project/MINI-DDSM-Complete-JPEG-8"
 name_dataset = "Mini-DDSM Data/MINI-DDSM-Complete-JPEG-8"
-print(os.path.exists('/Users/amalicema24/Desktop/Breast-Cancer-Classification/Mini-DDSM Data/MINI-DDSM-Complete-JPEG-8'))
 def create_df(name_dataset):
     is_cancer = {'Benign': 1, 'Cancer': 1, 'Normal': 0}
     data = {'patient_id': [], 'image_id':[],'Age':[], 'AgeIndex': [], 'Density': [], 'cancer':[], 'view': [], 'laterality': [], 'Path': [], 'Path_local': [], 'Label': []}
@@ -323,7 +321,7 @@ if not model_saved:
     print('Test accuracy:', eval_metrics[1])
 else:
     model = tf.keras.models.load_model("model_vgg_uniform")
-    df_vgg_2 = pd.read_csv('df_vgg_uniform_2.csv')
+    df_vgg_2 = pd.read_csv('df_vgg_uniform.csv')
     print("Test Accuracy: " + str(sum(df_vgg_2['Label'] == df_vgg_2['Prediction']) / len(df_vgg_2)))
     print(get_accuracies_by_age(df_vgg_2))
     print(get_accuracies_by_density(df_vgg_2))
